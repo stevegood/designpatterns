@@ -1,0 +1,1 @@
+<cfset application.obj.service.quoteService.getStockQuote() />
