@@ -1,6 +1,6 @@
 <cfcomponent>
 	<cfscript>
-	application.root = '/Observer/StockQuoteDemo/'; // change this path to reflect your environment
+	application.root = '/Observer/StockQuoteDemo'; // change this path to reflect your environment
 	this.name = 'Observer_Pattern_StockQuoteDemo_' & hash( ExpandPath(application.root) );
 	this.mappings['/'] = ExpandPath(application.root);
 	</cfscript>
@@ -42,16 +42,13 @@
 		<cfschedule
 			task="StockQuoteAutoUpdate"
 			operation="HTTPRequest"
-			URL="http://#CGI.SERVER_NAME#:#CGI.SERVER_PORT##application.root#trigger.cfm"
+			URL="http://#CGI.SERVER_NAME#:#CGI.SERVER_PORT##application.root#/trigger.cfm"
 			action="update"
 			startDate="#DateFormat(now(),'mm/dd/yyyy')#"
 			startTime="12:00 AM"
 			endTime="11:59 PM"
 			interval="180"
 		/>
-		
-		<!--- run the scheduled task --->
-		<cfschedule action="run" task="StockQuoteAutoUpdate" />
 	</cffunction>
 	
 </cfcomponent>

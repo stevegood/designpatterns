@@ -1,0 +1,17 @@
+#main {
+	width: 525px;
+}
+
+#quoteTable, #quoteDetailTable {
+	background-color: #DDDDDD;
+	padding: 10px;
+	border:3px #000000 solid;
+}
+
+#quoteTable {
+	float:left;
+}
+
+#quoteDetailTable {
+	float: right;
+}
